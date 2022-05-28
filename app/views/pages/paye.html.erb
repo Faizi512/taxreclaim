@@ -1,0 +1,206 @@
+<%= javascript_pack_tag 'home', 'data-turbolinks-track': 'reload', defer: true %>
+
+<div id="homepage">
+  <div class="header-bg">
+    <div class="container">
+      <div class="row w-100 mx-0 justify-content-center align-items-center py-5">
+        <div class="col-xl-8">
+          <%= render 'layouts/tax-rebate-home/step-form-paye' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="service py-4 bg-light">
+    <div class="container">
+      <h1 class="text-center"> Services </h1>
+      <div class="logos row flex-col justify-content-between">
+
+        <div class="text-center col-md-5 mb-4 mb-md-0">
+          <div class="service-logo">
+            <%= image_tag('homepage/service-1.png', class: 'w-35 mb-3')%>
+          </div>
+          <div>
+            <p class="fw-bold"> Self Employed Tax Refunds</p>
+            <p class="text-muted">Sub Contractor tax refund specialist. Guaranteed biggest tax refund in the UK. Get in touch for a no obligation quote.</p>
+          </div>
+          <div class="button">
+            <button class="btn btn-yellow scroll-to-form px-4 py-3 fw-bold">Claim Now</button>
+          </div>
+        </div>
+
+        <div class="text-center col-md-5 mb-4 mb-md-0">
+          <div class="service-logo">
+            <%= image_tag('homepage/service-2.png', class: 'w-35 mb-3')%>
+          </div>
+          <div>
+            <p class="fw-bold"> Employed Tax Refunds </p>
+            <p class="text-muted">Claim a tax refund even if your Employed. We can claim a refund on travel, uniform, union fees etc. We can go back 4 years.</p>
+          </div>
+          <div class="button">
+            <button class="btn btn-yellow scroll-to-form px-4 py-3 fw-bold">Claim Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="py-5 tax-refund bg-white">
+    <div class="text-center container">
+      <h2>LET HMRC PAY FOR YOUR TAX REFUND!</h2>
+      <div class="row flex-col align-items-baseline justify-content-between">
+
+        <div class="inner-logos py-md-5 py-3 col-md-3 ">
+          <div class="inner-logos-image">
+            <%= image_tag('homepage/02.png', class: 'mb-3')%>
+          </div>
+          <div>
+            <p class="text-muted">Free Tax Refund Quote</p>
+          </div>
+        </div>
+
+        <div class="inner-logos py-md-5 py-3 col-md-3 ">
+          <div class="inner-logos-image">
+            <%= image_tag('homepage/01.png', class: 'mb-3')%>
+          </div>
+          <div>
+            <p class="text-muted"> Get Accurate Tax Refund Calculation</p>
+          </div>
+        </div>
+
+        <div class="inner-logos py-md-5 py-3 col-md-3 ">
+          <div class="inner-logos-image">
+            <%= image_tag('homepage/04.png', class: 'mb-3')%>
+          </div>
+          <div>
+            <p class="text-muted"> 24/7 Support and Continuous Assistance</p>
+          </div>
+        </div>
+
+        <div class="inner-logos py-md-5 py-3 col-md-3 ">
+          <div class="inner-logos-image">
+            <%= image_tag('homepage/03.png', class: 'mb-3')%>
+          </div>
+          <div>
+            <p class="text-muted">Maximum Legal Refund Guaranteed</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-yellow scroll-to-form  py-3 px-5 fw-bold"> Claim Now </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews py-4 bg-light">
+    <div class="container d-lg-block d-none">
+      <div class="reviews-text text-center my-2 pb-2">
+        <h3> Don't Miss Out </h3>
+        <p class=""> Thousands of people are getting their tax refund across the country </p>
+      </div>
+      <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true }'>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-1.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-2.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-3.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-4.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-5.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+      </div>
+
+      <div class="reviews-button text-center mt-4">
+        <button class='btn scroll-to-form btn-yellow px-4 py-3'>Get Free Quote</button>
+      </div>
+    </div>
+
+    <div class="container d-lg-none d-block">
+      <div class="reviews-text text-center my-2 pb-2">
+        <h3> Don't Miss Out </h3>
+        <p class=""> Thousands of people are getting their tax refund across the country </p>
+      </div>
+      <div class="carousel">
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-1.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-2.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-3.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-4.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+        <div class="carousel-cell">
+          <%= image_tag("reviews/review-5.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+        </div>
+      </div>
+
+      <div class="reviews-button text-center mt-4">
+        <button class='btn btn-yellow scroll-to-form px-4 py-3'>Get Free Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-4 featured bg-white">
+    <div class="text-center container">
+      <div class="row flex-col align-items-baseline justify-content-between">
+
+        <div class=" featured-inner col-md-3 col-ipad">
+          <div class="featured-inner-logos">
+            <%= image_tag('homepage/info-2.png', class: ' mb-3')%>
+          </div>
+          <div class="px-2">
+            <p class="fw-bold"> £10,000,000 </p>
+            <p class="text-muted">Over  10 million pounds of tax refunded to date</p>
+          </div>
+        </div>
+
+        <div class=" featured-inner col-md-3 col-ipad">
+          <div class="featured-inner-logos">
+            <%= image_tag('homepage/info-1.png', class: ' mb-3')%>
+          </div>
+          <div class="px-2">
+            <p class="fw-bold"> £2,633</p>
+            <p class="text-muted">Average Take Home Rebate</p>
+          </div>
+        </div>
+
+        <div class=" featured-inner col-md-3 col-ipad">
+          <div class="featured-inner-logos">
+            <%= image_tag('homepage/info-3.png', class: ' mb-3')%>
+          </div>
+          <div class="px-2">
+            <p class="fw-bold">72 Hrs</p>
+            <p class="text-muted">Average Time For Payout</p>
+          </div>
+        </div>
+
+        <div class=" featured-inner col-md-3 col-ipad">
+          <div class="featured-inner-logos">
+            <%= image_tag('homepage/info-4.png', class: ' mb-3')%>
+          </div>
+          <div class="px-2">
+            <p class="fw-bold">1 Call We Collect</p>
+            <p class="text-muted">Get the Money you are owed today!</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-yellow scroll-to-form  py-3 px-5 fw-bold"> Claim Now </button>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'layouts/terms' %>
+<%= render 'layouts/privacy' %>

@@ -1,0 +1,53 @@
+<%= javascript_pack_tag 'tax_rebate', 'data-turbolinks-track': 'reload', defer: true %>
+<div class="bg-header " id="form-banner">
+	<div class="container">
+		<div class="row pt-4">
+			<h3 class="text-warning text-center fs-sm-13 pb-3 fw-bold">You have been declined for a LOAN today. The <span class="text-light fw-bold">GOOD NEWS</span> is you are eligible for a tax rebate!</h3>
+			<!-- <h3 class="text-warning text-center pb-4 fs-sm-13 fw-bold">An average claim is £2,300 and can be paid out within 72 hours.</h3> -->
+			<div class="col-md-5 text-center d-none d-md-block align-self-end">
+				<%= image_tag("girl.png", class: "w-80")%>
+			</div>
+			<div class="col-md-7 ms-auto mt-md-4">
+				<%=render "layouts/tax-rebate/step-form"%>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-light py-4 py-md-5 border">
+	<div class="container py-md-3">
+		<div class="w-100 text-center mb-5">
+			<h1 class="fw-bold text-dark-blu mb-3">Dont <span class="text-warning">Miss</span> Out</h1>
+			<p class="mb-0">Thousand's of people are getting tax refund's across the country</p>
+		</div>
+		<div class="row mx-0 w-100 justify-content-center align-items-center">
+			<% for i in 1..5 do %>
+				<div class="col-md-4 text-center">
+					<div class="review-img mx-auto">
+						<%= image_tag("reviews/review-#{i}.jpg", class: "w-100 h-100 pb-3 obj-covr")%>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="mt-5 text-center">
+			<button class="btn btn-warning rounded-pill scroll-to-form px-4 py-3 fw-bold fs-5 shadow">CLAIM YOUR TAX <i class="fas fa-long-arrow-alt-right ms-2"></i></button>
+		</div>
+	</div>
+</div>
+<div class="py-4 py-md-5">
+	<div class="container py-md-3">
+		<div class="text-center w-100 pb-4 pb-md-5">
+			<h2 class="text-warning">
+				We've Been Featured In These Publications
+			</h2>
+		</div>
+		<div class="row w-100 mx-0 justify-content-around align-items-center">
+			<% for i in 1..5 do %>
+			<div class="newspaper-logo mx-auto col-md-2 col-4">
+				<%= image_tag("newspaper/newspapers-#{i}.png", class: "w-100 mb-3")%>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+<%= render 'layouts/terms' %>
+<%= render 'layouts/privacy' %>

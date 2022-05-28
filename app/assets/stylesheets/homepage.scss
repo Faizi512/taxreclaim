@@ -1,0 +1,236 @@
+$yello : #ffdd05;
+$yellow-color: #fcb328;
+$primary-color: #111147;
+
+
+#homepage{
+  .header-bg{
+    background-image: asset-url("blue-gack.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+  }
+  .btn-yellow{
+    background-color: $yello !important;
+  }
+
+  .col-ipad{
+    @media screen and (max-width: 768px) {
+      width: 50% !important;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .carousel{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .carousel{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+
+  .carousel-cell {
+    width: 28%;
+    height: 400px;
+    margin-right: 60px;
+    border-radius: 5px;
+    @media screen and (max-width: 768px) {
+      width: 30%;
+      height: 262px;
+      margin: 7px;
+    }
+    @media screen and (max-width: 540px) {
+      height: 350px;
+      width: 50% ;
+      margin: auto;
+    }
+    @media screen and (max-width: 520px) {
+      width: 80% ;
+      margin: auto;
+    }
+  }
+
+  .flickity-button-icon {
+    color: $yello;
+  }
+
+  .flickity-page-dots {
+    position: absolute;
+    width: 100%;
+    bottom: -15px !important;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    line-height: 1;
+  }
+  #multi-step-form{
+    .form-group{
+      margin-bottom: 0px;
+    }
+
+    #progressbr {
+      position: absolute;
+      right: 10px;
+      top: -2px;
+      padding-left: 41px;
+      overflow: hidden;
+      color: $yellow-color
+    }
+
+    #progressbr li {
+      list-style-type: none;
+      font-size: 8px;
+      font-weight: 400;
+      margin-bottom: 35px
+    }
+
+    #progressbr li:nth-child(4) {
+      margin-bottom: 37px
+    }
+
+    #progressbr .step0:before {
+      content: "";
+      color: #fff
+    }
+
+    #progressbr li:before {
+      width: 30px;
+      height: 30px;
+      line-height: 25px;
+      display: block;
+      font-size: 18px;
+      background: $primary-color;
+      border: 1px solid $yellow-color;
+      border-radius: 50%;
+      margin: auto
+    }
+
+    #progressbr li:last-child:before {
+      width: 40px;
+      height: 40px
+    }
+
+    #progressbr li:after {
+      content: '';
+      width: 2px;
+      height: 64px;
+      background: #4A4A7D;
+      position: absolute;
+      left: 55px;
+      top: 15px;
+      z-index: -1
+    }
+
+    #progressbr li:last-child:after {
+      top: -81px;
+      height: 132px
+    }
+
+    #progressbr li:nth-child(3):after {
+      top: 145px
+    }
+    #progressbr li:nth-child(4):after {
+      top: 217px
+    }
+    #progressbr li:nth-child(5):after {
+      top: 270px
+    }
+    #progressbr li:nth-child(6):after {
+      top: 330px
+    }
+    #progressbr li:nth-child(6):after {
+      top: 335px
+    }
+    #progressbr li:nth-child(7):after {
+      top: 370px
+    }
+    #progressbr li:nth-child(8):after {
+      top: 400px
+    }
+
+    #progressbr li:nth-child(9):after {
+      top: -80px
+    }
+
+    #progressbr li:nth-child(2):after {
+      top: 76px
+    }
+
+    #progressbr li:first-child:after {
+      position: absolute;
+      top: 20px;
+    }
+
+
+    #progressbr li.active:after {
+      background: $yellow-color
+    }
+
+    #progressbr li:first-child.active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f501"
+    }
+    #progressbr li:nth-child(2).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f4c0"
+    }
+    #progressbr li:nth-child(3).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f571"
+    }
+    #progressbr li:nth-child(4).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f007";
+    }
+    #progressbr li:nth-child(5).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f007";
+      font-size: 14px;
+      padding-top: 2px;
+    }
+
+    #progressbr li:nth-child(6).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f007";
+      font-size: 14px;
+      padding-top: 2px;
+    }
+
+
+    #progressbr li:nth-child(7).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f007";
+      font-size: 14px;
+      padding-top: 2px;
+    }
+
+    #progressbr li:nth-child(8).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f53d";
+      font-size: 14px;
+      padding-top: 2px;
+    }
+  }
+}
+label.error{
+  font-size: 13px;
+  text-align: center;
+  width: 100%;
+  color: red;
+}

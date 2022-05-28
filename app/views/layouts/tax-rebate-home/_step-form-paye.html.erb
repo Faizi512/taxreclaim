@@ -1,0 +1,524 @@
+<div id="multi-step-form">
+  <div class="row d-flex justify-content-center p-0 mx-0 w-100">
+    <div class="col-12 p-0">
+      <div class="card card0 border-1 border-light">
+        <div class="row p-0 mx-0 w-100">
+          <div class="col-12 p-0">
+            <div class="card card00 px-2 pt-2 border-0">
+              <form class="form" id="dealform" data-details="<%= @details %>" method="post" action="javascript:;">
+                <div class="d-flex flex-md-row pe-md-3 ps-md-2 p-0 mt-md-4 mt-3 flex-column-reverse">
+                  <div class="col-lg-3 p-0 d-none d-lg-block position-relative">
+                    <div class="card1">
+                      <p class="mb-5 text-white fs-13 fw-bold">Employment Details</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Calculating Tax Rebate</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Estimate Rebate</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Personal Details</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Martial Status</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Claimed PPI Before</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Paid for Uniform Before</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Claim Rebate</p>
+                      <ul id="progressbr" class="text-center">
+                        <li class="active step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0 d-none"></li>
+                      </ul>
+                    </div>
+                  </div>
+                    <div class="col-lg-9 p-0 align-self-center border-left">
+                      <div class="card2 ms-2 first-screen show pb-2">
+                        <div class="row w-100 mx-0">
+                          <div class="col-12 px-1 text-center text-md-start">
+                            <h4 class="fw-bold text-center text-warning mb-0">See How Much Money you are due today!</h4>
+                            <h4 class="fw-bold text-center text-warning mb-4">Get your FREE TAX Rebate Estimation</h4>
+                            <div class="row w-100 mx-0 justify-content-center align-items-end">
+                              <div class="col-md-6 mb-3">
+                                <div class="form-group mb-1">
+                                  <label class="fw-bold text-warning mb-2">Employment Status</label>
+                                  <select name="employment-status"
+                                  class="select-field employment-status form-control border-0 rounded-pill"
+                                  id="employment-status"
+                                  data-parsley-required ="true"
+                                  data-parsley-group="block-0"
+                                  data-parsley-required-message="Please Select Employment Status">
+                                    <option selected="selected" value="" disabled="">Select</option>
+                                    <option value="full_time_employment">Full Time Employment</option>
+                                    <option value="part_time_employment">Part Time Employment</option>
+                                    <option value="temporary_employment">Temporary Employment</option>
+                                    <option value="self_employed">Self Employed</option>
+                                    <option value="unemployed">Unemployed</option>
+                                    <option value="pension">Pension</option>
+                                    <option value="disability_benefit">Disability Benefits</option>
+                                    <option value="student">Student</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <div class="input-group mb-1 monthly-salary-div d-none">
+                                  <label class="fw-bold text-warning w-100 mb-2">Enter your Monthly Salary</label>
+                                  <span class="bg-white border-0 input-group-text rounded-end rounded-pill pe-1" id="basic-addon">£</span>
+                                  <input
+                                  placeholder="Monthly Salary"
+                                  id="monthly-salary"
+                                  name="monthly-salary"
+                                  value="<%= params[:incomenetmonthly] %>"
+                                  class="monthly-salary form-control ps-1 border-0 rounded-pill rounded-start"
+                                  data-parsley-required-message="Please Enter your Monthly Salary"
+                                  data-parsley-group="block-0"
+                                  type="number"
+                                  aria-describedby="basic-addon">
+                                </div>
+                                <div class="input-group mb-1 day-rate-div d-none">
+                                  <label class="fw-bold text-warning w-100 mb-2">Enter your day rate</label>
+                                  <span class="bg-white border-0 input-group-text rounded-end rounded-pill pe-1" id="basic-addon1">£</span>
+                                  <input
+                                  placeholder="Your Day Rate"
+                                  id="day-rate"
+                                  name="day-rate"
+                                  type="number"
+                                  value="<%= params[:day_rate] %>"
+                                  class="border-0 day-rate form-control ps-1 rounded-pill rounded-start"
+                                  data-parsley-required-message="Please Enter your data rate"
+                                  data-parsley-group="block-0"
+                                  aria-describedby="basic-addon1">
+                                </div>
+                              </div>
+                              <p class="w-100 text-danger unemployed-div disp-none pt-3">
+                                Sorry unfortunately you will not be due a tax rebate as you need to be in employment or self employed in order to claim your rebate
+                              </p>
+                              <div class="col-md-6 mb-3">
+                                <div class="form-group mb-1 year-employment-div disp-none">
+                                  <label class="fw-bold text-warning self-employed-title disp-none mb-2">How many years have you been self employed for?</label>
+                                  <label class="fw-bold text-warning employed-title disp-none mb-2">How many years have you been employed for?</label>
+                                  <input
+                                  placeholder="Years In Employment"
+                                  id="year-employment"
+                                  type="number"
+                                  name="year-employment"
+                                  value="<%= params[:worktimeatemployer] %>"
+                                  class="year-employment form-control rounded-pill border-0"
+                                  data-parsley-group="block-0"
+                                  data-parsley-required = "true"
+                                  data-parsley-required-message="Please Enter Your Employment Years"
+                                  >
+                                </div>
+                              </div>
+                              <div class="col-md-6 mb-3 workIndustry-div disp-none">
+                                <div class="form-group mb-1">
+                                  <label class="fw-bold text-warning mb-2 pb-4">
+                                    What industry do you work in?
+                                  </label>
+                                  <select name="workIndustry"
+                                  class="select-field workIndustry form-control rounded-pill border-0"
+                                  id="workIndustry"
+                                  data-parsley-required = "true"
+                                  data-parsley-group="block-0"
+                                  data-parsley-required-message="Please Select Work Industry">
+                                    <option selected="selected" value="" disabled="">Select</option>
+                                    <option value="accountancy">Accountancy</option>
+                                    <option value="administration_secretarial">Administration/Secretarial</option>
+                                    <option value="advertising_media">Advertising/Media</option>
+                                    <option value="business_consultancy">Business Consultancy</option>
+                                    <option value="call_centre_operations">Call Centre Operations</option>
+                                    <option value="cleaning_services">Cleaning Services</option>
+                                    <option value="computer_services">Computer Services</option>
+                                    <option value="construction">Construction</option>
+                                    <option value="driver">Driver</option>
+                                    <option value="education">Education</option>
+                                    <option value="electricity_gas_water">Electricity/Gas/Water</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="health">Health</option>
+                                    <option value="health_care_nhs">Healthcare NHS</option>
+                                    <option value="hotels_restaurants">Hotels/Restaurants</option>
+                                    <option value="insurance">Insurance</option>
+                                    <option value="labour">Labour</option>
+                                    <option value="legal_services">Legal Services</option>
+                                    <option value="leisure_culture">Leisure/Culture</option>
+                                    <option value="manager_mid_level">Manager mid level</option>
+                                    <option value="manager_senior_level">Manager senior level</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="military">Military</option>
+                                    <option value="mining_quarrying">Mining/Quarrying</option>
+                                    <option value="professional">Professional</option>
+                                    <option value="public_administration">Public Administration</option>
+                                    <option value="publishing">Publishing</option>
+                                    <option value="real_estate_property">Real Estate/Property</option>
+                                    <option value="research_development">Research/Development</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="sales_and_customer_service">Sales and Customer Service</option>
+                                    <option value="skilled_trade">Skilled trade</option>
+                                    <option value="telecoms_internet">Telecoms/Internet</option>
+                                    <option value="transportation">Transportation</option>
+                                    <option value="other">Other</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <p class="w-100 text-danger not-eligible-div disp-none pt-3">
+                                Invalid value Tax can be reclaimed from 1-4 years
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="ps-2 missing-data disp-none text-danger">You are unable to proceed due to Missing Data.</p>
+                        <div class="mx-0 py-1">
+                          <div class="next-button mt-1 px-3 rounded-pill ms-md-auto mx-auto me-md-0">
+                            CALCULATE<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mb-1 mx-0 w-100">
+                          <div class="form-group mb-1 col-12 p-0 text-center">
+                            <div class="lds-hourglass"></div>
+                            <h2 class="text-warning fw-bold mt-2">Calculating</h2>
+                            <h5 class="text-white">your tax rebate</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mt-3 mb-1 mx-0 w-100">
+                          <div class="mt-2 mb-1 col-12 p-0">
+                            <div class="mb-4 text-center">
+                              <h4 class="fw-bold text-warning">Money You Are Due To Claim Back</h4>
+                              <h1 class="text-white mb-0">£<span class="ms-2 tax-estimate">0</span></h1>
+                            </div>
+                            <div class="custom-checkbox w-100">
+                              <div class="">
+                                <label class="text-warning w-100 text-center">Accept</label>
+                                <div class="onoffswitch mx-auto">
+                                  <input type="hidden" name="c1">
+                                  <input
+                                    type="checkbox"
+                                    name="agree"
+                                    class="onoffswitch-checkbox approve"
+                                    id="myonoffswitch"
+                                    data-parsley-group="block-1"
+                                    data-parsley-required="true"
+                                    data-parsley-required-message="Please accept our terms and conditions"
+                                    >
+                                  <label class="onoffswitch-label mb-2" for="myonoffswitch">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="error-checkbox"></div>
+                              <%= render 'layouts/accept_terms'%>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
+                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                            Next<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim Your TAX Rebate Now</h4>
+                          <h5 class="fw-bold text-center text-warning mb-4 w-100"> Claims can be paid out within 72 hours</h5>
+                          <div class="mb-3 col-md-6">
+                            <div class="form-group">
+                              <label class="fw-bold text-warning mb-2" for="first_name">First Name</label>
+                              <input
+                              name="first_name"
+                              required
+                              id="first_name"
+                              data-parsley-required="true"
+                              data-parsley-required-message="Please Enter First Name"
+                              data-parsley-pattern-message="First Name Must Be Alphabetic"
+                              data-parsley-pattern="/^[a-zA-Z ]*$/"
+                              data-parsley-group="block-2"
+                              type="text"
+                              placeholder="First Name"
+                              class="first_name form-control rounded-pill border-0"
+                              >
+                            </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <div class="form-group">
+                              <label class="fw-bold text-warning mb-2" for="last_name">Last Name</label>
+                              <input
+                               name="last_name"
+                              required
+                              id="last_name"
+                              data-parsley-required="true"
+                              data-parsley-required-message="Please Enter Last Name"
+                              data-parsley-pattern-message="First Name Must Be Alphabetic"
+                              data-parsley-pattern="/^[a-zA-Z ]*$/"
+                              data-parsley-group="block-2"
+                              type="text"
+                              placeholder="Last Name"
+                              class="last_name form-control rounded-pill border-0"
+                              >
+                            </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="email">Email Address</label>
+                              <input
+                              type="email"
+                              name="email"
+                              required
+                              id="email"
+                              data-parsley-required="true"
+                              data-parsley-required-message="Please Enter Valid Email Address"
+                              data-parsley-type="email"
+                              data-parsley-type-message="Please Enter Valid Email Address"
+                              data-parsley-group="block-2"
+                              data-parsley-validemail
+                              value=""
+                              placeholder="Email"
+                              class="form-control email rounded-pill border-0"
+                              >
+                            </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="phone">Phone Number</label>
+                              <input
+                              id="phone"
+                              name="phone"
+                              required
+                              data-parsley-required="true"
+                              data-parsley-required-message="Please Enter Valid Phone Number"
+                              data-parsley-group="block-2"
+                              data-parsley-validphone
+                              data-parsley-minlength-message="Please Enter Valid Phone Number"
+                              type="tel"
+                              class="phone form-control rounded-pill border-0"
+                              placeholder="Phone Number">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                            Next<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                            <h4 class="fw-bold text-center text-warning mb-0 w-100">Marital Status</h4>
+
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="fw-bold text-warning mb-2" for="Single">Single</label>
+                              <input
+                              name="marital_status"
+                              required
+                              id="Singal"
+                              value="Single"
+                              type="radio"
+                              placeholder="Single"
+                              class=""
+                              >
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="fw-bold text-warning mb-2" for="married">Married</label>
+                              <input
+                               name="marital_status"
+                              required
+                              value="Married"
+                              id="married"
+                              type="radio"
+                              placeholder="marital_status"
+                              class=""
+                              >
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="divorce">Divorce</label>
+                              <input
+                              type="radio"
+                              name="Divorce"
+                              required
+                              id="email"
+                              value="Divorce"
+                              placeholder="Divorce"
+                              class=""
+                              >
+                            </div>
+                          </div>
+                           <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="cohabit">CoHabit</label>
+                              <input
+                              id="cohabit"
+                              name="marital_status"
+                              required
+                              type="radio"
+                              class=""
+                              placeholder="CoHabit">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="separated">Separated</label>
+                              <input
+                              id="separated"
+                              name="marital_status"
+                              required
+                              value="Separated"
+                              type="radio"
+                              class=""
+                              placeholder="Separated">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                            Next<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <h4 class="fw-bold text-center text-warning mb-0 w-100">Claimed PPI Before</h4>
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Claimed-PPI-Before">True</label>
+                              <input
+                              id="Claimed-PPI-Before"
+                              name="claimed_ppi_before"
+                              required
+                              value="true"
+                              type="radio"
+                              class=""
+                              placeholder="claimed_ppi_before">
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Claimed-PPI-Before">false</label>
+                              <input
+                              id="Claimed-PPI-Before"
+                              name="claimed_ppi_before"
+                              required
+                              value="false"
+                              type="radio"
+                              class=""
+                              placeholder="claimed_ppi_before">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                            Next<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <h4 class="fw-bold text-center text-warning mb-0 w-100">Paid for Uniform Before</h4>
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Paid-for-Uniform-Before">True</label>
+                              <input
+                              id="Paid-for-Uniform-Before"
+                              name="paid_for_uniform_before"
+                              required
+                              value="true"
+                              type="radio"
+                              class=""
+                              placeholder="paid_for_uniform_before">
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Claimed-PPI-Before">false</label>
+                              <input
+                              id="Paid-for-Uniform-Before"
+                              name="paid_for_uniform_before"
+                              required
+                              value="false"
+                              type="radio"
+                              class=""
+                              placeholder="paid_for_uniform_before">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                          <div class="continueBtn2 mt-1 px-3 rounded-pill ms-auto">
+                            Claim Rebate<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 mb-0">
+                        <div class="row px-3 mt-2 text-center">
+                          <h4 class="col-12 text-warning">
+                            <strong>Now claim your <span class="text-white me-1">£</span><span class="tax-estimate text-white">{£xxxx}</span> tax rebate in 3 easy steps</strong>
+                          </h4>
+                          <div class="row gx-0 justify-content-around py-4">
+                            <div class="col-3 position-relative">
+                              <div class="step-icon rounded-circle p-1 mx-auto step-icon-after">
+                                <div class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                  <span class="fw-bold fs-5">1</span>
+                                </div>
+                              </div>
+                              <div class="mt-3">
+                                <p class="text-white fs-14 mb-0">A tax expert from Rebates Tax will call you</p>
+                              </div>
+                            </div>
+                            <div class="col-3 position-relative">
+                              <div class="step-icon rounded-circle p-1 mx-auto step-icon-after">
+                                <div class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                  <span class="fw-bold fs-5">2</span>
+                                </div>
+                              </div>
+                              <div class="mt-3">
+                                <p class="text-white fs-14 mb-0">Send your tax expert your P60 and expenses</p>
+                              </div>
+                            </div>
+                            <div class="col-3 position-relative">
+                              <div class="step-icon rounded-circle p-1 mx-auto">
+                                <div class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                  <span class="fw-bold fs-5">3</span>
+                                </div>
+                              </div>
+                              <div class="mt-3">
+                                <p class="text-white fs-14 mb-0">Wait for HMRC to pay you the money you are owed</p>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="small text-warning">
+                            We will do the rest for you. Expect a call from us when your rebate is ready.
+                          </p>
+                        </div>
+                      </div>
+                      <p class="small ps-2 text-white">Over £10 MILLION Refunded from users so far. Dont just take it from us! See below</p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
