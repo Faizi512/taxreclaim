@@ -1,0 +1,303 @@
+<div id="multi-step-form">
+  <div class="row d-flex justify-content-center p-0 mx-0 w-100">
+    <div class="col-12 p-0">
+      <div class="card card0 border-1 border-light">
+        <div class="row p-0 mx-0 w-100">
+          <div class="col-12 p-0">
+            <div class="card card00 px-2 pt-2 border-0">
+              <form class="form" id="dealform" data-details="<%= @details %>" method="post" action="javascript:;">
+                <div class="d-flex flex-md-row pe-md-3 ps-md-2 p-0 mt-md-4 mt-3 flex-column-reverse">
+                  <div class="col-lg-4 p-0 d-none d-lg-block position-relative">
+                    <div class="card1">
+                      <p class="mb-5 text-white fs-13 fw-bold">Your Details</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Calculating Tax Rebate</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Estimate Rebate</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Personal Details</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Martial Status</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Claimed PPI Before</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Paid for Uniform Before</p>
+                      <p class="mb-5 text-white fs-13 fw-bold">Claim Rebate</p>
+                      <ul id="progressbr" class="text-center">
+                        <li class="active step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0"></li>
+                        <li class="step0 d-none"></li>
+                      </ul>
+                    </div>
+                  </div>
+                    <div class="col-lg-8 p-0 align-self-center border-left">
+                      <div class="card2 ms-2 first-screen show pb-2">
+                        <div class="row w-100 mx-0">
+                          <div class="col-12 px-1 text-center text-md-start">
+                            <h4 class="fw-bold text-md-start text-center text-warning mb-4">See how much £££ you can get Today. Just confirm your details and press Calculate</h4>
+                            <div class="row w-100 mx-0">
+                              <div class="col-6 ps-2 pe-0 mb-2 mb-md-0">
+                                <h6 class="text-warning fw-bold">Employment <span class="d-block d-md-inline-block">status</span></h6>
+                                <p class="small text-white employment-status">full time</p>
+                              </div>
+                              <div class="col-6 ps-2 pe-0 mb-2 mb-md-0">
+                                <h6 class="text-warning fw-bold">Monthly <span class="d-block d-md-inline-block">salary</span></h6>
+                                <p class="small text-white monthly-salary">£2,000</p>
+                              </div>
+                              <div class="col-6 ps-2 pe-0 mb-2 mb-md-0">
+                                <h6 class="text-warning fw-bold">Years in <span class="d-block d-md-inline-block">employment</span></h6>
+                                <p class="small text-white yearly-salary">2</p>
+                              </div>
+                              <div class="col-6 ps-2 pe-0 mb-2 mb-md-0">
+                                <h6 class="text-warning fw-bold">Work <span class="d-block d-md-inline-block">industry</span></h6>
+                                <p class="small text-white work-industry">IT</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="ps-2 missing-data disp-none text-danger">You are unable to proceed due to Missing Data.</p>
+                        <div class="mx-0 py-1">
+                          <div class="next-button mt-1 px-3 rounded-pill ms-md-auto mx-auto me-md-0">
+                            CALCULATE<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mb-1 mx-0 w-100">
+                          <div class="form-group mb-1 col-12 p-0 text-center">
+                            <div class="lds-hourglass"></div>
+                            <h2 class="text-warning fw-bold mt-2">Calculating</h2>
+                            <h5 class="text-white">your tax rebate</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mt-3 mb-1 mx-0 w-100">
+                          <div class="mt-2 mb-1 col-12 p-0">
+                            <div class="mb-4 text-center">
+                              <h4 class="fw-bold text-warning">Money You Are Due To Claim Back</h4>
+                              <h1 class="text-white mb-0">£<span class="ms-2 tax-estimate">0</span></h1>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
+                          <div class="continueBtn mt-1 px-3 rounded-pill mx-auto">
+                            Claim Money Now<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                            <h4 class="fw-bold text-center text-warning mb-0 w-100">Marital Status</h4>
+
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="fw-bold text-warning mb-2" for="Single">Single</label>
+                              <input
+                              name="marital_status"
+                              required
+                              id="Singal"
+                              value="Single"
+                              type="radio"
+                              placeholder="Single"
+                              class=""
+                              >
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="fw-bold text-warning mb-2" for="married">Married</label>
+                              <input
+                               name="marital_status"
+                              required
+                              value="Married"
+                              id="married"
+                              type="radio"
+                              placeholder="marital_status"
+                              class=""
+                              >
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="divorce">Divorce</label>
+                              <input
+                              type="radio"
+                              name="Divorce"
+                              required
+                              id="email"
+                              value="Divorce"
+                              placeholder="Divorce"
+                              class=""
+                              >
+                            </div>
+                          </div>
+                           <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="cohabit">CoHabit</label>
+                              <input
+                              id="cohabit"
+                              name="marital_status"
+                              required
+                              type="radio"
+                              class=""
+                              placeholder="CoHabit">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="separated">Separated</label>
+                              <input
+                              id="separated"
+                              name="marital_status"
+                              required
+                              value="Separated"
+                              type="radio"
+                              class=""
+                              placeholder="Separated">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                            Next<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <h4 class="fw-bold text-center text-warning mb-0 w-100">Claimed PPI Before</h4>
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Claimed-PPI-Before">True</label>
+                              <input
+                              id="Claimed-PPI-Before"
+                              name="claimed_ppi_before"
+                              required
+                              value="true"
+                              type="radio"
+                              class=""
+                              placeholder="claimed_ppi_before">
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Claimed-PPI-Before">false</label>
+                              <input
+                              id="Claimed-PPI-Before"
+                              name="claimed_ppi_before"
+                              required
+                              value="false"
+                              type="radio"
+                              class=""
+                              placeholder="claimed_ppi_before">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                            Next<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 pb-2">
+                        <h4 class="fw-bold text-center text-warning mb-0 w-100">Paid for Uniform Before</h4>
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Paid-for-Uniform-Before">True</label>
+                              <input
+                              id="Paid-for-Uniform-Before"
+                              name="paid_for_uniform_before"
+                              required
+                              value="true"
+                              type="radio"
+                              class=""
+                              placeholder="paid_for_uniform_before">
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="text-warning mb-2 fw-bold" for="Claimed-PPI-Before">false</label>
+                              <input
+                              id="Paid-for-Uniform-Before"
+                              name="paid_for_uniform_before"
+                              required
+                              value="false"
+                              type="radio"
+                              class=""
+                              placeholder="paid_for_uniform_before">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                          <div class="continueBtn2 mt-1 px-3 rounded-pill ms-auto">
+                            Claim Rebate<span class="fa fa-arrow-right ms-2"></span>
+                          </div>
+                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                            <span class="fa fa-arrow-left me-2"></span>Prev
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card2 ms-2 mb-0">
+                        <div class="row px-3 mt-2 text-center">
+                          <h4 class="col-12 text-warning">
+                            <strong>Now claim your <span class="text-white me-1">£</span><span class="tax-estimate text-white">{£xxxx}</span> tax rebate in 3 easy steps</strong>
+                          </h4>
+                          <div class="row gx-0 justify-content-around py-4">
+                            <div class="col-3 position-relative">
+                              <div class="step-icon rounded-circle p-1 mx-auto step-icon-after">
+                                <div class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                  <span class="fw-bold fs-5">1</span>
+                                </div>
+                              </div>
+                              <div class="mt-3">
+                                <p class="text-white fs-14 mb-0">A tax expert from Rebates Tax will call you</p>
+                              </div>
+                            </div>
+                            <div class="col-3 position-relative">
+                              <div class="step-icon rounded-circle p-1 mx-auto step-icon-after">
+                                <div class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                  <span class="fw-bold fs-5">2</span>
+                                </div>
+                              </div>
+                              <div class="mt-3">
+                                <p class="text-white fs-14 mb-0">Send your tax expert your P60 and expenses</p>
+                              </div>
+                            </div>
+                            <div class="col-3 position-relative">
+                              <div class="step-icon rounded-circle p-1 mx-auto">
+                                <div class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                  <span class="fw-bold fs-5">3</span>
+                                </div>
+                              </div>
+                              <div class="mt-3">
+                                <p class="text-white fs-14 mb-0">Wait for HMRC to pay you the money you are owed</p>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="text-warning small">
+                            We will do the rest for you. Expect a call from us when your rebate is ready.
+                          </p>
+                        </div>
+                      </div>
+                      <p class="small ps-2 text-white">Over £10 MILLION Refunded from users so far. Dont just take it from us! See below</p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

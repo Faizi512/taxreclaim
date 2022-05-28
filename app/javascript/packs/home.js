@@ -164,7 +164,7 @@ class Home extends Common {
         CI.nextStep(next_fs, next_fs.next())
       }, 2500);
     }
-    if (CI.currentTab == 6) {
+    if (CI.currentTab == 7) {
       CI.postData()
       return true
     }

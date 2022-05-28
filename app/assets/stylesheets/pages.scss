@@ -270,9 +270,29 @@ body{
     top: 76px
   }
 
+  #progressbr li:nth-child(4):after {
+    top: 217px
+  }
+  #progressbr li:nth-child(5):after {
+    top: 270px
+  }
+
+  #progressbr li:nth-child(6):after {
+    top: 330px
+  }
+  #progressbr li:nth-child(7):after {
+    top: 370px
+  }
+  #progressbr li:nth-child(8):after {
+    top: 400px
+  }
+
+  #progressbr li:nth-child(9):after {
+    top: -80px
+  }
+
   #progressbr li:first-child:after {
     position: absolute;
-    top: -81px
   }
 
 
@@ -281,6 +301,7 @@ body{
   }
 
   #progressbr li:first-child.active:before  {
+    top: 81px;
     background: $yellow-color;
     font-family: FontAwesome;
     content: "\f007"
@@ -312,15 +333,23 @@ body{
   }
 
   #progressbr li:nth-child(6).active:before  {
-    background: $yellow-color !important;
+    background: $yellow-color;
     font-family: FontAwesome;
-    content: "\f53d";
+    content: "\f007";
     font-size: 14px;
     padding-top: 2px;
   }
 
   #progressbr li:nth-child(7).active:before  {
-    background: $yellow-color !important;
+    background: $yellow-color;
+    font-family: FontAwesome;
+    content: "\f007";
+    font-size: 14px;
+    padding-top: 2px;
+  }
+
+  #progressbr li:nth-child(8).active:before  {
+    background: $yellow-color;
     font-family: FontAwesome;
     content: "\f53d";
     font-size: 14px;

@@ -145,7 +145,7 @@ class Common {
       }, 2500);
     }
 
-    if (CI.currentTab == 6) {
+    if (CI.currentTab == 7) {
       CI.postData()
       return true
     }
@@ -196,7 +196,8 @@ class Common {
       url: "https://go.webformsubmit.com/dukeleads/waitsubmit?key=eecf9b6b61edd9e66ca0f7735dfa033a&campid=" + campid,
       data: formData,
       success: function(data) {
-        console.log(data)
+          let host = window.location.host
+          window.location.href = `${host}/paye-rebate`
       },
       error: function(request){
         console.log(request.statusText)
