@@ -13,15 +13,9 @@
                       <p class="mb-5 text-white fs-13 fw-bold">Calculating Tax Rebate</p>
                       <p class="mb-5 text-white fs-13 fw-bold">Estimate Rebate</p>
                       <p class="mb-5 text-white fs-13 fw-bold">Personal Details</p>
-                      <p class="mb-5 text-white fs-13 fw-bold">Martial Status</p>
-                      <p class="mb-5 text-white fs-13 fw-bold">Claimed PPI Before</p>
-                      <p class="mb-5 text-white fs-13 fw-bold">Paid for Uniform Before</p>
                       <p class="mb-5 text-white fs-13 fw-bold">Claim Rebate</p>
                       <ul id="progressbr" class="text-center">
                         <li class="active step0"></li>
-                        <li class="step0"></li>
-                        <li class="step0"></li>
-                        <li class="step0"></li>
                         <li class="step0"></li>
                         <li class="step0"></li>
                         <li class="step0"></li>
@@ -298,111 +292,40 @@
                               placeholder="Phone Number">
                             </div>
                           </div>
-                        </div>
-                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
-                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
-                            Next<span class="fa fa-arrow-right ms-2"></span>
+                          <div class="mb-3 col-md-6">
+                            <label class="fw-bold text-warning mb-2">Marital Status</label>
+                            <select name="marital-status"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="martial-status">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="single">Single</option>
+                              <option value="married">Married</option>
+                              <option value="divorced">Divorced</option>
+                              <option value="widow">Widow</option>
+                              <option value="seperated">Seperated</option>
+                            </select>
                           </div>
-                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
-                            <span class="fa fa-arrow-left me-2"></span>Prev
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card2 ms-2 pb-2">
-                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <div class="mb-3 col-md-6">
+                            <label class="fw-bold text-warning mb-2">Claimed PPI Before</label>
+                            <select name="claimed-ppi-before"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="paid-before-uniform-status">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="true">True</option>
+                              <option value="false">False</option>
+                            </select>
 
-                        <div class="form-group mb-1">
-                                  <label class="fw-bold text-warning mb-2">Marital Status</label>
-                                  <select name="marital-status"
-                                  class="select-field  form-control border-0 rounded-pill"
-                                  id="martial-status">
-                                    <option selected="selected" value="" disabled="">Select</option>
-                                    <option value="single">Single</option>
-                                    <option value="married">Married</option>
-                                    <option value="divorced">Divorced</option>
-                                    <option value="widow">Widow</option>
-                                    <option value="seperated">Seperated</option>
-                                  </select>
-                                  </div>
+                          </div>
+                          <div class="mb-3 col-md-6">
+                            <label class="fw-bold text-warning mb-2">Paid for Uniform Before</label>
+                            <select name="paid-before-uniform-before"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="paid-before-uniform-status">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="true">True</option>
+                              <option value="false">False</option>
+                            </select>
 
-
-                        </div>
-                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
-                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
-                            Next<span class="fa fa-arrow-right ms-2"></span>
-                          </div>
-                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
-                            <span class="fa fa-arrow-left me-2"></span>Prev
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card2 ms-2 pb-2">
-                        <h4 class="fw-bold text-center text-warning mb-0 w-100">Claimed PPI Before</h4>
-                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
-                          <div class="col-md-2">
-                            <div class="form-group">
-                              <label class="text-warning mb-2 fw-bold d-block" for="Claimed-PPI-Before">True</label>
-                              <input
-                              id="Claimed-PPI-Before"
-                              name="claimed_ppi_before"
-                              required
-                              value="true"
-                              type="radio"
-                              class=""
-                              placeholder="claimed_ppi_before">
-                            </div>
-                          </div>
-                          <div class="col-md-2">
-                            <div class="form-group">
-                              <label class="text-warning mb-2 fw-bold d-block" for="Claimed-PPI-Before">false</label>
-                              <input
-                              id="Claimed-PPI-Before"
-                              name="claimed_ppi_before"
-                              required
-                              value="false"
-                              type="radio"
-                              class=""
-                              placeholder="claimed_ppi_before">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
-                          <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
-                            Next<span class="fa fa-arrow-right ms-2"></span>
-                          </div>
-                          <div class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
-                            <span class="fa fa-arrow-left me-2"></span>Prev
-                          </div>
-                        </div>
-                      </div>
-                      <div class="card2 ms-2 pb-2">
-                        <h4 class="fw-bold text-center text-warning mb-0 w-100">Paid for Uniform Before</h4>
-                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
-                          <div class="col-md-2">
-                            <div class="form-group">
-                              <label class="text-warning d-block  mb-2 fw-bold d-block" for="Paid-for-Uniform-Before">True</label>
-                              <input
-                              id="Paid-for-Uniform-Before"
-                              name="paid_for_uniform_before"
-                              required
-                              value="true"
-                              type="radio"
-                              class=""
-                              placeholder="paid_for_uniform_before">
-                            </div>
-                          </div>
-                          <div class="col-md-2">
-                            <div class="form-group">
-                              <label class="text-warning mb-2 fw-bold d-block" for="Claimed-PPI-Before">false</label>
-                              <input
-                              id="Paid-for-Uniform-Before"
-                              name="paid_for_uniform_before"
-                              required
-                              value="false"
-                              type="radio"
-                              class=""
-                              placeholder="paid_for_uniform_before">
-                            </div>
                           </div>
                         </div>
                         <div class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
@@ -456,6 +379,7 @@
                           </p>
                         </div>
                       </div>
+
                       <p class="small ps-2 text-white">Over £10 MILLION Refunded from users so far. Dont just take it from us! See below</p>
                     </div>
                   </div>
