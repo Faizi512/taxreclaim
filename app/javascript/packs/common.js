@@ -145,7 +145,7 @@ class Common {
       }, 2500);
     }
 
-    if (CI.currentTab == 4) {
+    if (CI.currentTab == 5) {
       CI.postData()
       return true
     }
