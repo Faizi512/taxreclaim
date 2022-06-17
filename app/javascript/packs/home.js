@@ -159,10 +159,6 @@ class Home extends Common {
         });
       }
     });
-    if(CI.currentTab ==   4){
-      $("#progressbr li:nth-child(6)").addClass("active")
-      $("#progressbr li:nth-child(7)").addClass("active")
-    }
     if (CI.currentTab == 1) {
       setTimeout(function(){
         CI.nextStep(next_fs, next_fs.next())
