@@ -24,4 +24,17 @@ module PagesHelper
     }.to_json
    end
 
+   def new_claim_helper
+    @details = {
+     camp_id: 'TAX',
+     success_url: '',
+     form_name: 'home',
+     optin_url: 'https://uktaxreclaim.com/',
+     sid: nil,
+     ssid: nil,
+     source: "",
+     ipaddress: request.remote_ip,
+   }.to_json
+  end
+
 end

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/tax-rebate-v2', to: 'pages#tax_rebate_v2'
   get '/paye-rebate', to: 'pages#paye_rebate'
   get '/tax-rebate', to: 'pages#tax_rebate'
+  get '/new-claim', to: 'pages#new_claim'
   get '/app', to: 'pages#app'
 end

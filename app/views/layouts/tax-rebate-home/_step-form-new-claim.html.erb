@@ -1,0 +1,724 @@
+<div id="multi-step-form">
+    <div class="row d-flex justify-content-center p-0 mx-0 w-100">
+        <div class="col-12 p-0">
+            <div class="card card0 border-1 border-light">
+                <div class="row p-0 mx-0 w-100">
+                    <div class="col-12 p-0">
+                        <div class="card card00 px-2 pt-2 border-0">
+                            <form class="form" id="dealform" data-details="<%= @details %>" method="post"
+                                action="javascript:;">
+                                <div class="d-flex flex-md-row pe-md-3 ps-md-2 p-0 mt-md-4 mt-3 flex-column-reverse">
+                                    <div class="col-lg-4 p-0 d-none d-lg-block position-relative">
+                                        <div class="card1">
+                                            <p class="mb-5 text-white fs-13 fw-bold">Employment Details</p>
+                                            <p class="mb-5 text-white fs-13 fw-bold">Calculating Tax Rebate</p>
+                                            <p class="mb-5 text-white fs-13 fw-bold">Estimate Rebate</p>
+                                            <p class="mb-5 text-white fs-13 fw-bold">Personal Details</p>
+                                            <p class="mb-5 text-white fs-13 fw-bold">Final Details</p>
+                                            <p class="mb-5 text-white fs-13 fw-bold">Signature</p>
+                                            <p class="mb-5 text-white fs-13 fw-bold">Claim Rebate</p>
+                                            <ul id="progressbr" class="text-center">
+                                                <li class="active step0"></li>
+                                                <li class="step0"></li>
+                                                <li class="step0"></li>
+                                                <li class="step0"></li>
+                                                <li class="step0"></li>
+                                                <li class="step0"></li>
+                                                <li class="step0"></li>
+                                                <li class="step0 d-none"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-8 p-0 align-self-center border-left">
+                                        <div class="card2 ms-2 first-screen show pb-2">
+                                            <div class="row w-100 mx-0">
+                                                <div class="col-12 px-1 text-center text-md-start">
+                                                    <h4 class="fw-bold text-center text-warning mb-0">See How Much Money
+                                                        you are due today!</h4>
+                                                    <h4 class="fw-bold text-center text-warning mb-4">Get your FREE TAX
+                                                        Rebate Estimation</h4>
+                                                    <div class="row w-100 mx-0 justify-content-center align-items-end">
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="form-group mb-1">
+                                                                <label class="fw-bold text-warning mb-2">Employment
+                                                                    Status</label>
+                                                                <select name="employment-status"
+                                                                    class="select-field employment-status form-control border-0 rounded-pill"
+                                                                    id="employment-status" data-parsley-required="true"
+                                                                    data-parsley-group="block-0"
+                                                                    data-parsley-required-message="Please Select Employment Status">
+                                                                    <option selected="selected" value="" disabled="">
+                                                                        Select</option>
+                                                                    <option value="full_time_employment">Full Time
+                                                                        Employment</option>
+                                                                    <option value="part_time_employment">Part Time
+                                                                        Employment</option>
+                                                                    <option value="temporary_employment">Temporary
+                                                                        Employment</option>
+                                                                    <option value="self_employed">Self Employed</option>
+                                                                    <option value="unemployed">Unemployed</option>
+                                                                    <option value="pension">Pension</option>
+                                                                    <option value="disability_benefit">Disability
+                                                                        Benefits</option>
+                                                                    <option value="student">Student</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="input-group mb-1 monthly-salary-div d-none">
+                                                                <label class="fw-bold text-warning w-100 mb-2">Enter
+                                                                    your Monthly Salary</label>
+                                                                <span
+                                                                    class="bg-white border-0 input-group-text rounded-end rounded-pill pe-1"
+                                                                    id="basic-addon">£</span>
+                                                                <input placeholder="Monthly Salary" id="monthly-salary"
+                                                                    name="monthly-salary"
+                                                                    value="<%= params[:incomenetmonthly] %>"
+                                                                    class="monthly-salary form-control ps-1 border-0 rounded-pill rounded-start"
+                                                                    data-parsley-required-message="Please Enter your Monthly Salary"
+                                                                    data-parsley-group="block-0" type="number"
+                                                                    aria-describedby="basic-addon">
+                                                            </div>
+                                                            <div class="input-group mb-1 day-rate-div d-none">
+                                                                <label class="fw-bold text-warning w-100 mb-2">Enter
+                                                                    your day rate</label>
+                                                                <span
+                                                                    class="bg-white border-0 input-group-text rounded-end rounded-pill pe-1"
+                                                                    id="basic-addon1">£</span>
+                                                                <input placeholder="Your Day Rate" id="day-rate"
+                                                                    name="day-rate" type="number"
+                                                                    value="<%= params[:day_rate] %>"
+                                                                    class="border-0 day-rate form-control ps-1 rounded-pill rounded-start"
+                                                                    data-parsley-required-message="Please Enter your data rate"
+                                                                    data-parsley-group="block-0"
+                                                                    aria-describedby="basic-addon1">
+                                                            </div>
+                                                        </div>
+                                                        <p class="w-100 text-danger unemployed-div disp-none pt-3">
+                                                            Sorry unfortunately you will not be due a tax rebate as you
+                                                            need to be in employment or self employed in order to claim
+                                                            your rebate
+                                                        </p>
+                                                        <div class="col-md-6 mb-3">
+                                                            <div class="form-group mb-1 year-employment-div disp-none">
+                                                                <label
+                                                                    class="fw-bold text-warning self-employed-title disp-none mb-2">How
+                                                                    many years have you been self employed for?</label>
+                                                                <label
+                                                                    class="fw-bold text-warning employed-title disp-none mb-2">How
+                                                                    many years have you been employed for?</label>
+                                                                <input placeholder="Years In Employment"
+                                                                    id="year-employment" type="number"
+                                                                    name="year-employment"
+                                                                    value="<%= params[:worktimeatemployer] %>"
+                                                                    class="year-employment form-control rounded-pill border-0"
+                                                                    data-parsley-group="block-0"
+                                                                    data-parsley-required="true"
+                                                                    data-parsley-required-message="Please Enter Your Employment Years">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mb-3 workIndustry-div disp-none">
+                                                            <div class="form-group mb-1">
+                                                                <label class="fw-bold text-warning mb-2 pb-4">
+                                                                    What industry do you work in?
+                                                                </label>
+                                                                <select name="workIndustry"
+                                                                    class="select-field workIndustry form-control rounded-pill border-0"
+                                                                    id="workIndustry" data-parsley-required="true"
+                                                                    data-parsley-group="block-0"
+                                                                    data-parsley-required-message="Please Select Work Industry">
+                                                                    <option selected="selected" value="" disabled="">
+                                                                        Select</option>
+                                                                    <option value="accountancy">Accountancy</option>
+                                                                    <option value="administration_secretarial">
+                                                                        Administration/Secretarial</option>
+                                                                    <option value="advertising_media">Advertising/Media
+                                                                    </option>
+                                                                    <option value="business_consultancy">Business
+                                                                        Consultancy</option>
+                                                                    <option value="call_centre_operations">Call Centre
+                                                                        Operations</option>
+                                                                    <option value="cleaning_services">Cleaning Services
+                                                                    </option>
+                                                                    <option value="computer_services">Computer Services
+                                                                    </option>
+                                                                    <option value="construction">Construction</option>
+                                                                    <option value="driver">Driver</option>
+                                                                    <option value="education">Education</option>
+                                                                    <option value="electricity_gas_water">
+                                                                        Electricity/Gas/Water</option>
+                                                                    <option value="finance">Finance</option>
+                                                                    <option value="health">Health</option>
+                                                                    <option value="health_care_nhs">Healthcare NHS
+                                                                    </option>
+                                                                    <option value="hotels_restaurants">
+                                                                        Hotels/Restaurants</option>
+                                                                    <option value="insurance">Insurance</option>
+                                                                    <option value="labour">Labour</option>
+                                                                    <option value="legal_services">Legal Services
+                                                                    </option>
+                                                                    <option value="leisure_culture">Leisure/Culture
+                                                                    </option>
+                                                                    <option value="manager_mid_level">Manager mid level
+                                                                    </option>
+                                                                    <option value="manager_senior_level">Manager senior
+                                                                        level</option>
+                                                                    <option value="manufacturing">Manufacturing</option>
+                                                                    <option value="military">Military</option>
+                                                                    <option value="mining_quarrying">Mining/Quarrying
+                                                                    </option>
+                                                                    <option value="professional">Professional</option>
+                                                                    <option value="public_administration">Public
+                                                                        Administration</option>
+                                                                    <option value="publishing">Publishing</option>
+                                                                    <option value="real_estate_property">Real
+                                                                        Estate/Property</option>
+                                                                    <option value="research_development">
+                                                                        Research/Development</option>
+                                                                    <option value="retail">Retail</option>
+                                                                    <option value="sales_and_customer_service">Sales and
+                                                                        Customer Service</option>
+                                                                    <option value="skilled_trade">Skilled trade</option>
+                                                                    <option value="telecoms_internet">Telecoms/Internet
+                                                                    </option>
+                                                                    <option value="transportation">Transportation
+                                                                    </option>
+                                                                    <option value="other">Other</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <p class="w-100 text-danger not-eligible-div disp-none pt-3">
+                                                            Invalid value Tax can be reclaimed from 1-4 years
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="ps-2 missing-data disp-none text-danger">You are unable to proceed
+                                                due to Missing Data.</p>
+                                            <div class="mx-0 py-1">
+                                                <div
+                                                    class="next-button mt-1 px-3 rounded-pill ms-md-auto mx-auto me-md-0">
+                                                    CALCULATE<span class="fa fa-arrow-right ms-2"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card2 ms-2 pb-2">
+                                            <div class="row px-md-3 mb-1 mx-0 w-100">
+                                                <div class="form-group mb-1 col-12 p-0 text-center">
+                                                    <div class="lds-hourglass"></div>
+                                                    <h2 class="text-warning fw-bold mt-2">Calculating</h2>
+                                                    <h5 class="text-white">your tax rebate</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card2 ms-2 pb-2">
+                                            <div class="row px-md-3 mt-3 mb-1 mx-0 w-100">
+                                                <div class="mt-2 mb-1 col-12 p-0">
+                                                    <div class="mb-4 text-center">
+                                                        <h4 class="fw-bold text-warning">Money You Are Due To Claim Back
+                                                        </h4>
+                                                        <h1 class="text-white mb-0">£<span
+                                                                class="ms-2 tax-estimate">0</span></h1>
+                                                    </div>
+                                                    <div class="custom-checkbox w-100">
+                                                        <div class="">
+                                                            <label class="text-warning w-100 text-center">Accept</label>
+                                                            <div class="onoffswitch mx-auto">
+                                                                <input type="hidden" name="c1">
+                                                                <input type="checkbox" name="agree"
+                                                                    class="onoffswitch-checkbox approve"
+                                                                    id="myonoffswitch" data-parsley-group="block-1"
+                                                                    data-parsley-required="true"
+                                                                    data-parsley-required-message="Please accept our terms and conditions">
+                                                                <label class="onoffswitch-label mb-2"
+                                                                    for="myonoffswitch">
+                                                                    <span class="onoffswitch-inner"></span>
+                                                                    <span class="onoffswitch-switch"></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="error-checkbox"></div>
+                                                        <%= render 'layouts/accept_terms'%>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
+                                                <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                                                    Next<span class="fa fa-arrow-right ms-2"></span>
+                                                </div>
+                                                <div
+                                                    class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                                                    <span class="fa fa-arrow-left me-2"></span>Prev
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card2 ms-2 pb-2">
+                                            <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                                                <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim Your TAX
+                                                    Rebate Now</h4>
+                                                <h5 class="fw-bold text-center text-warning mb-4 w-100"> Claims can be
+                                                    paid out within 72 hours</h5>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="fw-bold text-warning mb-2" for="first_name">First
+                                                            Name</label>
+                                                        <input name="first_name" required id="first_name"
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter First Name"
+                                                            data-parsley-pattern-message="First Name Must Be Alphabetic"
+                                                            data-parsley-pattern="/^[a-zA-Z ]*$/"
+                                                            data-parsley-group="block-2" type="text"
+                                                            placeholder="First Name"
+                                                            class="first_name form-control rounded-pill border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="fw-bold text-warning mb-2" for="last_name">Last
+                                                            Name</label>
+                                                        <input name="last_name" required id="last_name"
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter Last Name"
+                                                            data-parsley-pattern-message="First Name Must Be Alphabetic"
+                                                            data-parsley-pattern="/^[a-zA-Z ]*$/"
+                                                            data-parsley-group="block-2" type="text"
+                                                            placeholder="Last Name"
+                                                            class="last_name form-control rounded-pill border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="text-warning mb-2 fw-bold" for="email">Email
+                                                            Address</label>
+                                                        <input type="email" name="email" required id="email"
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter Valid Email Address"
+                                                            data-parsley-type="email"
+                                                            data-parsley-type-message="Please Enter Valid Email Address"
+                                                            data-parsley-group="block-2" data-parsley-validemail
+                                                            value="" placeholder="Email"
+                                                            class="form-control email rounded-pill border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="text-warning mb-2 fw-bold" for="phone">Phone
+                                                            Number</label>
+                                                        <input id="phone" name="phone" required
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter Valid Phone Number"
+                                                            data-parsley-group="block-2" data-parsley-validphone
+                                                            data-parsley-minlength-message="Please Enter Valid Phone Number"
+                                                            type="tel" class="phone form-control rounded-pill border-0"
+                                                            placeholder="Phone Number">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="text-warning mb-2 fw-bold" for="postcode">Post Code
+                                                            </label>
+                                                        <input id="postcode" class="first_name form-control rounded-pill border-0 postcode1" name="postcode" required
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter Valid Post Code"
+                                                            data-parsley-group="block-2" data-parsley-validapipostcode
+                                                            type="text" class="form-control rounded-pill border-0"
+                                                            placeholder="Post Code ">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="fw-bold text-warning mb-2" for="dob">Date Of
+                                                            Birth</label>
+                                                        <input name="dob" required id="dob" data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter Date of Birth"
+                                                            data-parsley-pattern-message="" data-parsley-group="block-2"
+                                                            type="date" placeholder="Date of Birth"
+                                                            class="first_name form-control rounded-pill border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group col-lg-12 property-div disp-none">
+                                                        <label class="text-start  text-warning w-100 mb-1 form-label"><strong>Your
+                                                        Property</strong></label>
+                                                        <input type="hidden" name="towncity" class="towncity" value="Bradford">
+                                                        <input type="hidden" name="street1" class="street1" value="89 Westgate">
+                                                        <input type="hidden" name="county" class="county" value="West Yorkshire">
+                                                        <input type="hidden" name="houseNumber" class="houseNumber" value="">
+                                                        <input type="hidden" name="street2" class="street2" value="">
+                                                        <input type="hidden" name="building" class="building" value="89">
+                                                        <select id="property" name="property"
+                                                            class="last_name select-field employment-status form-control border-0 rounded-pill"
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Select Your property"
+                                                            data-parsley-group="block-4" required="" data-parsley-id="35">
+                                                            <option disabled="" selected="">
+                                                                Select Your Property
+                                                            </option>
+                
+                                                            <option data-street="1 Baptist Place" data-city="Bradford"
+                                                                data-address="1 Baptist Place   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="1">
+                                                                1 Baptist Place Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="2" data-city="Bradford"
+                                                                data-address="2 In 1 Grill Diner 57-59 Westgate Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="In 1 Grill Diner"
+                                                                data-building="57-59">
+                                                                2 In 1 Grill Diner 57-59 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="61a Westgate" data-city="Bradford"
+                                                                data-address="61a Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="61a">
+                                                                61a Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="63 Westgate" data-city="Bradford"
+                                                                data-address="63 Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="63">
+                                                                63 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="67 Westgate" data-city="Bradford"
+                                                                data-address="67 Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="67">
+                                                                67 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="73 Westgate" data-city="Bradford"
+                                                                data-address="73 Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="73">
+                                                                73 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="89 Westgate" data-city="Bradford"
+                                                                data-address="89 Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="89">
+                                                                89 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="90 Westgate" data-city="Bradford"
+                                                                data-address="90 Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="90">
+                                                                90 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="91 Westgate" data-city="Bradford"
+                                                                data-address="91 Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="91">
+                                                                91 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="93 Westgate" data-city="Bradford"
+                                                                data-address="93 Westgate   Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="" data-building="93">
+                                                                93 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Adrian Philips" data-city="Bradford"
+                                                                data-address="Adrian Philips 77 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="77 Westgate"
+                                                                data-building="77">
+                                                                Adrian Philips 77 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Betty Charles Retail Outlet Ltd" data-city="Bradford"
+                                                                data-address="Betty Charles Retail Outlet Ltd 51 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="51 Westgate"
+                                                                data-building="51">
+                                                                Betty Charles Retail Outlet Ltd 51 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Frame One Snooker Club" data-city="Bradford"
+                                                                data-address="Frame One Snooker Club Textile Hall Westgate Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="Textile Hall"
+                                                                data-building="Textile Hall">
+                                                                Frame One Snooker Club Textile Hall Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Hair Studio" data-city="Bradford"
+                                                                data-address="Hair Studio 53 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="53 Westgate"
+                                                                data-building="53">
+                                                                Hair Studio 53 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Hein Gericke (UK) Ltd" data-city="Bradford"
+                                                                data-address="Hein Gericke (UK) Ltd 81-83 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="81-83 Westgate"
+                                                                data-building="81-83">
+                                                                Hein Gericke (UK) Ltd 81-83 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="M G International" data-city="Bradford"
+                                                                data-address="M G International 51 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="51 Westgate"
+                                                                data-building="51">
+                                                                M G International 51 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Mannings Musicals" data-city="Bradford"
+                                                                data-address="Mannings Musicals 75 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="75 Westgate"
+                                                                data-building="75">
+                                                                Mannings Musicals 75 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Northern Drum Centre" data-city="Bradford"
+                                                                data-address="Northern Drum Centre 87 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="87 Westgate"
+                                                                data-building="87">
+                                                                Northern Drum Centre 87 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Pound Empire" data-city="Bradford"
+                                                                data-address="Pound Empire Textile Hall 49 Westgate Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="Textile Hall"
+                                                                data-building="49">
+                                                                Pound Empire Textile Hall 49 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Queens Snooker" data-city="Bradford"
+                                                                data-address="Queens Snooker 49 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="49 Westgate"
+                                                                data-building="49">
+                                                                Queens Snooker 49 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Star Hotel" data-city="Bradford"
+                                                                data-address="Star Hotel Textile Hall 49 Westgate Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="Textile Hall"
+                                                                data-building="49">
+                                                                Star Hotel Textile Hall 49 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Stratford Salon Gents Hairdressers" data-city="Bradford"
+                                                                data-address="Stratford Salon Gents Hairdressers 65 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="65 Westgate"
+                                                                data-building="65">
+                                                                Stratford Salon Gents Hairdressers 65 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="W Snooker Lounge" data-city="Bradford"
+                                                                data-address="W Snooker Lounge Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="Westgate"
+                                                                data-building="W Snooker Lounge">
+                                                                W Snooker Lounge Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Westgate Audio Visual Ltd" data-city="Bradford"
+                                                                data-address="Westgate Audio Visual Ltd 79 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="79 Westgate"
+                                                                data-building="79">
+                                                                Westgate Audio Visual Ltd 79 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Westgate Fisheries" data-city="Bradford"
+                                                                data-address="Westgate Fisheries 61 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="61 Westgate"
+                                                                data-building="61">
+                                                                Westgate Fisheries 61 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Westgate International Food" data-city="Bradford"
+                                                                data-address="Westgate International Food 93 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="93 Westgate"
+                                                                data-building="93">
+                                                                Westgate International Food 93 Westgate Bradford West Yorkshire
+                                                            </option>
+                
+                                                            <option data-street="Westgate Phones" data-city="Bradford"
+                                                                data-address="Westgate Phones 55 Westgate  Bradford West Yorkshire"
+                                                                data-province="West Yorkshire" data-street2="55 Westgate"
+                                                                data-building="55">
+                                                                Westgate Phones 55 Westgate Bradford West Yorkshire
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                            <div
+                                                class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
+                                                <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                                                    Next<span class="fa fa-arrow-right ms-2"></span>
+                                                </div>
+                                                <div
+                                                    class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                                                    <span class="fa fa-arrow-left me-2"></span>Prev
+                                                </div>
+                                            </div>
+                                        </div>
+                    <div class="card2 ms-2 pb-2">
+                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                          <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim Your TAX Rebate Now</h4>
+                          <h5 class="fw-bold text-center text-warning mb-4 w-100"> Claims can be paid out within 72 hours</h5>
+                           <div class="mb-3 col-md-12">
+                            <label class="fw-bold text-warning mb-2">Are you married or in a civil partnership for the last 1 to 4 years?</label>
+                            <select name="question1"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="question1">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label class="fw-bold text-warning mb-2">Are you a higher rate tax-payer?</label>
+                            <select name="question2"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="question2">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label class="fw-bold text-warning mb-2">Are you or your partner unemployed or earning up to £12,500 per year?</label>
+                            <select name="question3"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="question3">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label class="fw-bold text-warning mb-2">Are you or your partner earning between £12,500 and £50,000 per year?</label>
+                            <select name="question4"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="question4">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                            <label class="fw-bold text-warning mb-2">Are you in arrears with HMRC?</label>
+                            <select name="question5"
+                              class="select-field  form-control border-0 rounded-pill"
+                              id="question5">
+                              <option selected="selected" value="" disabled="">Select</option>
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </div>
+                          <div class="mb-3 col-md-12">
+                          <label class="fw-bold text-warning mb-2"> Have you claimed marriage tax allowance before?</label>
+                          <select name="question6"
+                            class="select-field  form-control border-0 rounded-pill"
+                            id="question6">
+                            <option selected="selected" value="" disabled="">Select</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                          </select>
+                        </div>
+                        </div>
+                        <div
+                            class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
+                            <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                                Next<span class="fa fa-arrow-right ms-2"></span>
+                            </div>
+                            <div
+                                class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                                <span class="fa fa-arrow-left me-2"></span>Prev
+                            </div>
+                        </div>
+                      </div>
+                                        <div class="card2 ms-2 pb-2">
+                                            <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                                                <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim
+                                                    Your TAX Rebate Now</h4>
+                                                <h5 class="fw-bold text-center text-warning mb-4 w-100"> Claims
+                                                    can be paid out within 72 hours</h5>
+                                                <div class="mb-3 col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="fw-bold text-warning mb-2" for="signature">
+                                                            Signature
+                                                        </label>
+                                                        <input name="signature" required id="signature"
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter signature"
+                                                            data-parsley-pattern-message="Signature Must Be Alphabetic"
+                                                            data-parsley-pattern="/^[a-zA-Z ]*$/"
+                                                            data-parsley-group="block-2" type="text"
+                                                            placeholder="Signature"
+                                                            class=" form-control rounded-pill border-0" row="3">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse pb-3">
+                                                <div class="continueBtn2 mt-1 px-3 rounded-pill ms-auto">
+                                                    Claim Rebate<span class="fa fa-arrow-right ms-2"></span>
+                                                </div>
+                                                <div
+                                                    class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                                                    <span class="fa fa-arrow-left me-2"></span>Prev
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card2 ms-2 mb-0">
+                                            <div class="row px-3 mt-2 text-center">
+                                                <h4 class="col-12 text-warning">
+                                                    <strong>Now claim your <span class="text-white me-1">£</span><span
+                                                            class="tax-estimate text-white">{£xxxx}</span> tax rebate in
+                                                        3 easy steps</strong>
+                                                </h4>
+                                                <div class="row gx-0 justify-content-around py-4">
+                                                    <div class="col-3 position-relative">
+                                                        <div
+                                                            class="step-icon rounded-circle p-1 mx-auto step-icon-after">
+                                                            <div
+                                                                class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                                                <span class="fw-bold fs-5">1</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <p class="text-white fs-14 mb-0">You will receive a call
+                                                                from one of our Tax Experts</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 position-relative">
+                                                        <div
+                                                            class="step-icon rounded-circle p-1 mx-auto step-icon-after">
+                                                            <div
+                                                                class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                                                <span class="fw-bold fs-5">2</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <p class="text-white fs-14 mb-0">Send your tax expert your
+                                                                P60 and expenses</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-3 position-relative">
+                                                        <div class="step-icon rounded-circle p-1 mx-auto">
+                                                            <div
+                                                                class="step-text h-100 w-100 d-flex align-items-center justify-content-center rounded-circle">
+                                                                <span class="fw-bold fs-5">3</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-3">
+                                                            <p class="text-white fs-14 mb-0">Wait for HMRC to pay you
+                                                                the money you are owed</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="small text-warning">
+                                                    We will do the rest for you. Expect a call from us when your rebate
+                                                    is ready.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

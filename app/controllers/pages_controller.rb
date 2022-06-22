@@ -15,4 +15,8 @@ class PagesController < ApplicationController
 	def paye
 	end
 
+	def new_claim
+		new_claim_helper
+	end
+
 end
