@@ -231,7 +231,7 @@ class Common {
       partner_last_name: $("#partner_last_name").val() || "",
       partner_dob: $("#partner_dob").val() || "",
       nic: $("#national").val() || "",
-      sign: $("#sig-dataUrl").val() || "",
+      signature: $("#sig-dataUrl").val() || "",
       ipaddress: this.details.ipaddress || '',
       source: this.getUrlParameter('source') || this.details.source || '',
       sid: this.getUrlParameter('sid') || 1
