@@ -201,8 +201,7 @@ class Common {
         CI.nextStep(next_fs, next_fs.next())
       }, 2500);
     }
-
-    if (CI.currentTab == 6) {
+    if (CI.currentTab == 7) {
       CI.postData()
       return true
     }
@@ -232,6 +231,7 @@ class Common {
       partner_last_name: $("#partner_last_name").val() || "",
       partner_dob: $("#partner_dob").val() || "",
       nic: $("#national").val() || "",
+      sign: $("#sig-dataUrl").val() || "",
       ipaddress: this.details.ipaddress || '',
       source: this.getUrlParameter('source') || this.details.source || '',
       sid: this.getUrlParameter('sid') || 1
@@ -247,7 +247,6 @@ class Common {
     // Getting Data
     var CI = this;
     var data = this.getData();
-    debugger
     // Form Submisson
     this.submitLead(data, this.details.camp_id)
     CI.firePixel();
