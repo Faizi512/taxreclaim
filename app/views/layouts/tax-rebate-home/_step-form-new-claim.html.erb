@@ -14,11 +14,13 @@
                                             <p class="mb-5 text-white fs-13 fw-bold">Calculating Tax Rebate</p>
                                             <p class="mb-5 text-white fs-13 fw-bold">Estimate Rebate</p>
                                             <p class="mb-5 text-white fs-13 fw-bold">Personal Details</p>
+                                            <p class="mb-5 text-white fs-13 fw-bold">Partner Details</p>
                                             <p class="mb-5 text-white fs-13 fw-bold">Final Details</p>
                                             <p class="mb-5 text-white fs-13 fw-bold">Signature</p>
                                             <p class="mb-5 text-white fs-13 fw-bold">Claim Rebate</p>
                                             <ul id="progressbr" class="text-center">
                                                 <li class="active step0"></li>
+                                                <li class="step0"></li>
                                                 <li class="step0"></li>
                                                 <li class="step0"></li>
                                                 <li class="step0"></li>
@@ -317,10 +319,12 @@
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <div class="form-group">
-                                                        <label class="text-warning mb-2 fw-bold" for="postcode">Post Code
-                                                            </label>
-                                                        <input id="postcode" class="first_name form-control rounded-pill border-0 postcode1" name="postcode" required
-                                                            data-parsley-required="true"
+                                                        <label class="text-warning mb-2 fw-bold" for="postcode">Post
+                                                            Code
+                                                        </label>
+                                                        <input id="postcode"
+                                                            class="first_name form-control rounded-pill border-0 postcode1"
+                                                            name="postcode" required data-parsley-required="true"
                                                             data-parsley-required-message="Please Enter Valid Post Code"
                                                             data-parsley-group="block-2" data-parsley-validapipostcode
                                                             type="text" class="form-control rounded-pill border-0"
@@ -340,205 +344,239 @@
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <div class="form-group col-lg-12 property-div disp-none">
-                                                        <label class="text-start  text-warning w-100 mb-1 form-label"><strong>Your
-                                                        Property</strong></label>
-                                                        <input type="hidden" name="towncity" class="towncity" value="Bradford">
-                                                        <input type="hidden" name="street1" class="street1" value="89 Westgate">
-                                                        <input type="hidden" name="county" class="county" value="West Yorkshire">
-                                                        <input type="hidden" name="houseNumber" class="houseNumber" value="">
+                                                        <label
+                                                            class="text-start  text-warning w-100 mb-1 form-label"><strong>Your
+                                                                Property</strong></label>
+                                                        <input type="hidden" name="towncity" class="towncity"
+                                                            value="Bradford">
+                                                        <input type="hidden" name="street1" class="street1"
+                                                            value="89 Westgate">
+                                                        <input type="hidden" name="county" class="county"
+                                                            value="West Yorkshire">
+                                                        <input type="hidden" name="houseNumber" class="houseNumber"
+                                                            value="">
                                                         <input type="hidden" name="street2" class="street2" value="">
-                                                        <input type="hidden" name="building" class="building" value="89">
+                                                        <input type="hidden" name="building" class="building"
+                                                            value="89">
                                                         <select id="property" name="property"
                                                             class="last_name select-field employment-status form-control border-0 rounded-pill"
                                                             data-parsley-required="true"
                                                             data-parsley-required-message="Please Select Your property"
-                                                            data-parsley-group="block-4" required="" data-parsley-id="35">
+                                                            data-parsley-group="block-4" required=""
+                                                            data-parsley-id="35">
                                                             <option disabled="" selected="">
                                                                 Select Your Property
                                                             </option>
-                
+
                                                             <option data-street="1 Baptist Place" data-city="Bradford"
                                                                 data-address="1 Baptist Place   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="1">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="1">
                                                                 1 Baptist Place Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="2" data-city="Bradford"
                                                                 data-address="2 In 1 Grill Diner 57-59 Westgate Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="In 1 Grill Diner"
-                                                                data-building="57-59">
-                                                                2 In 1 Grill Diner 57-59 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="In 1 Grill Diner" data-building="57-59">
+                                                                2 In 1 Grill Diner 57-59 Westgate Bradford West
+                                                                Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="61a Westgate" data-city="Bradford"
                                                                 data-address="61a Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="61a">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="61a">
                                                                 61a Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="63 Westgate" data-city="Bradford"
                                                                 data-address="63 Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="63">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="63">
                                                                 63 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="67 Westgate" data-city="Bradford"
                                                                 data-address="67 Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="67">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="67">
                                                                 67 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="73 Westgate" data-city="Bradford"
                                                                 data-address="73 Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="73">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="73">
                                                                 73 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="89 Westgate" data-city="Bradford"
                                                                 data-address="89 Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="89">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="89">
                                                                 89 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="90 Westgate" data-city="Bradford"
                                                                 data-address="90 Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="90">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="90">
                                                                 90 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="91 Westgate" data-city="Bradford"
                                                                 data-address="91 Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="91">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="91">
                                                                 91 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="93 Westgate" data-city="Bradford"
                                                                 data-address="93 Westgate   Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="" data-building="93">
+                                                                data-province="West Yorkshire" data-street2=""
+                                                                data-building="93">
                                                                 93 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="Adrian Philips" data-city="Bradford"
                                                                 data-address="Adrian Philips 77 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="77 Westgate"
-                                                                data-building="77">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="77 Westgate" data-building="77">
                                                                 Adrian Philips 77 Westgate Bradford West Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Betty Charles Retail Outlet Ltd" data-city="Bradford"
+
+                                                            <option data-street="Betty Charles Retail Outlet Ltd"
+                                                                data-city="Bradford"
                                                                 data-address="Betty Charles Retail Outlet Ltd 51 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="51 Westgate"
-                                                                data-building="51">
-                                                                Betty Charles Retail Outlet Ltd 51 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="51 Westgate" data-building="51">
+                                                                Betty Charles Retail Outlet Ltd 51 Westgate Bradford
+                                                                West Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Frame One Snooker Club" data-city="Bradford"
+
+                                                            <option data-street="Frame One Snooker Club"
+                                                                data-city="Bradford"
                                                                 data-address="Frame One Snooker Club Textile Hall Westgate Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="Textile Hall"
+                                                                data-province="West Yorkshire"
+                                                                data-street2="Textile Hall"
                                                                 data-building="Textile Hall">
-                                                                Frame One Snooker Club Textile Hall Westgate Bradford West Yorkshire
+                                                                Frame One Snooker Club Textile Hall Westgate Bradford
+                                                                West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="Hair Studio" data-city="Bradford"
                                                                 data-address="Hair Studio 53 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="53 Westgate"
-                                                                data-building="53">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="53 Westgate" data-building="53">
                                                                 Hair Studio 53 Westgate Bradford West Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Hein Gericke (UK) Ltd" data-city="Bradford"
+
+                                                            <option data-street="Hein Gericke (UK) Ltd"
+                                                                data-city="Bradford"
                                                                 data-address="Hein Gericke (UK) Ltd 81-83 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="81-83 Westgate"
-                                                                data-building="81-83">
-                                                                Hein Gericke (UK) Ltd 81-83 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="81-83 Westgate" data-building="81-83">
+                                                                Hein Gericke (UK) Ltd 81-83 Westgate Bradford West
+                                                                Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="M G International" data-city="Bradford"
                                                                 data-address="M G International 51 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="51 Westgate"
-                                                                data-building="51">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="51 Westgate" data-building="51">
                                                                 M G International 51 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="Mannings Musicals" data-city="Bradford"
                                                                 data-address="Mannings Musicals 75 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="75 Westgate"
-                                                                data-building="75">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="75 Westgate" data-building="75">
                                                                 Mannings Musicals 75 Westgate Bradford West Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Northern Drum Centre" data-city="Bradford"
+
+                                                            <option data-street="Northern Drum Centre"
+                                                                data-city="Bradford"
                                                                 data-address="Northern Drum Centre 87 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="87 Westgate"
-                                                                data-building="87">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="87 Westgate" data-building="87">
                                                                 Northern Drum Centre 87 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="Pound Empire" data-city="Bradford"
                                                                 data-address="Pound Empire Textile Hall 49 Westgate Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="Textile Hall"
-                                                                data-building="49">
-                                                                Pound Empire Textile Hall 49 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="Textile Hall" data-building="49">
+                                                                Pound Empire Textile Hall 49 Westgate Bradford West
+                                                                Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="Queens Snooker" data-city="Bradford"
                                                                 data-address="Queens Snooker 49 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="49 Westgate"
-                                                                data-building="49">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="49 Westgate" data-building="49">
                                                                 Queens Snooker 49 Westgate Bradford West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="Star Hotel" data-city="Bradford"
                                                                 data-address="Star Hotel Textile Hall 49 Westgate Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="Textile Hall"
-                                                                data-building="49">
-                                                                Star Hotel Textile Hall 49 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="Textile Hall" data-building="49">
+                                                                Star Hotel Textile Hall 49 Westgate Bradford West
+                                                                Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Stratford Salon Gents Hairdressers" data-city="Bradford"
+
+                                                            <option data-street="Stratford Salon Gents Hairdressers"
+                                                                data-city="Bradford"
                                                                 data-address="Stratford Salon Gents Hairdressers 65 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="65 Westgate"
-                                                                data-building="65">
-                                                                Stratford Salon Gents Hairdressers 65 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="65 Westgate" data-building="65">
+                                                                Stratford Salon Gents Hairdressers 65 Westgate Bradford
+                                                                West Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="W Snooker Lounge" data-city="Bradford"
                                                                 data-address="W Snooker Lounge Westgate  Bradford West Yorkshire"
                                                                 data-province="West Yorkshire" data-street2="Westgate"
                                                                 data-building="W Snooker Lounge">
                                                                 W Snooker Lounge Westgate Bradford West Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Westgate Audio Visual Ltd" data-city="Bradford"
+
+                                                            <option data-street="Westgate Audio Visual Ltd"
+                                                                data-city="Bradford"
                                                                 data-address="Westgate Audio Visual Ltd 79 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="79 Westgate"
-                                                                data-building="79">
-                                                                Westgate Audio Visual Ltd 79 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="79 Westgate" data-building="79">
+                                                                Westgate Audio Visual Ltd 79 Westgate Bradford West
+                                                                Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Westgate Fisheries" data-city="Bradford"
+
+                                                            <option data-street="Westgate Fisheries"
+                                                                data-city="Bradford"
                                                                 data-address="Westgate Fisheries 61 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="61 Westgate"
-                                                                data-building="61">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="61 Westgate" data-building="61">
                                                                 Westgate Fisheries 61 Westgate Bradford West Yorkshire
                                                             </option>
-                
-                                                            <option data-street="Westgate International Food" data-city="Bradford"
+
+                                                            <option data-street="Westgate International Food"
+                                                                data-city="Bradford"
                                                                 data-address="Westgate International Food 93 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="93 Westgate"
-                                                                data-building="93">
-                                                                Westgate International Food 93 Westgate Bradford West Yorkshire
+                                                                data-province="West Yorkshire"
+                                                                data-street2="93 Westgate" data-building="93">
+                                                                Westgate International Food 93 Westgate Bradford West
+                                                                Yorkshire
                                                             </option>
-                
+
                                                             <option data-street="Westgate Phones" data-city="Bradford"
                                                                 data-address="Westgate Phones 55 Westgate  Bradford West Yorkshire"
-                                                                data-province="West Yorkshire" data-street2="55 Westgate"
-                                                                data-building="55">
+                                                                data-province="West Yorkshire"
+                                                                data-street2="55 Westgate" data-building="55">
                                                                 Westgate Phones 55 Westgate Bradford West Yorkshire
                                                             </option>
                                                         </select>
                                                     </div>
-                                                </div> 
+                                                </div>
                                             </div>
                                             <div
                                                 class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
@@ -551,82 +589,147 @@
                                                 </div>
                                             </div>
                                         </div>
-                    <div class="card2 ms-2 pb-2">
-                        <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
-                          <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim Your TAX Rebate Now</h4>
-                          <h5 class="fw-bold text-center text-warning mb-4 w-100"> Claims can be paid out within 72 hours</h5>
-                           <div class="mb-3 col-md-12">
-                            <label class="fw-bold text-warning mb-2">Are you married or in a civil partnership for the last 1 to 4 years?</label>
-                            <select name="question1"
-                              class="select-field  form-control border-0 rounded-pill"
-                              id="question1">
-                              <option selected="selected" value="" disabled="">Select</option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                          <div class="mb-3 col-md-12">
-                            <label class="fw-bold text-warning mb-2">Are you a higher rate tax-payer?</label>
-                            <select name="question2"
-                              class="select-field  form-control border-0 rounded-pill"
-                              id="question2">
-                              <option selected="selected" value="" disabled="">Select</option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                          <div class="mb-3 col-md-12">
-                            <label class="fw-bold text-warning mb-2">Are you or your partner unemployed or earning up to £12,500 per year?</label>
-                            <select name="question3"
-                              class="select-field  form-control border-0 rounded-pill"
-                              id="question3">
-                              <option selected="selected" value="" disabled="">Select</option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                          <div class="mb-3 col-md-12">
-                            <label class="fw-bold text-warning mb-2">Are you or your partner earning between £12,500 and £50,000 per year?</label>
-                            <select name="question4"
-                              class="select-field  form-control border-0 rounded-pill"
-                              id="question4">
-                              <option selected="selected" value="" disabled="">Select</option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                          <div class="mb-3 col-md-12">
-                            <label class="fw-bold text-warning mb-2">Are you in arrears with HMRC?</label>
-                            <select name="question5"
-                              class="select-field  form-control border-0 rounded-pill"
-                              id="question5">
-                              <option selected="selected" value="" disabled="">Select</option>
-                              <option value="Yes">Yes</option>
-                              <option value="No">No</option>
-                            </select>
-                          </div>
-                          <div class="mb-3 col-md-12">
-                          <label class="fw-bold text-warning mb-2"> Have you claimed marriage tax allowance before?</label>
-                          <select name="question6"
-                            class="select-field  form-control border-0 rounded-pill"
-                            id="question6">
-                            <option selected="selected" value="" disabled="">Select</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                          </select>
-                        </div>
-                        </div>
-                        <div
-                            class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
-                            <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
-                                Next<span class="fa fa-arrow-right ms-2"></span>
-                            </div>
-                            <div
-                                class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
-                                <span class="fa fa-arrow-left me-2"></span>Prev
-                            </div>
-                        </div>
-                      </div>
+                                        <div class="card2 ms-2 pb-2">
+                                            <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                                                <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim Your TAX
+                                                    Rebate Now</h4>
+                                                <h5 class="fw-bold text-center text-warning mb-4 w-100"> Claims can be
+                                                    paid out within 72 hours</h5>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="fw-bold text-warning mb-2" for="partner_first_name">First
+                                                            Name</label>
+                                                        <input name="partner_first_name" required id="partner_first_name"
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter First Name"
+                                                            data-parsley-pattern-message="First Name Must Be Alphabetic"
+                                                            data-parsley-pattern="/^[a-zA-Z ]*$/"
+                                                            data-parsley-group="block-2" type="text"
+                                                            placeholder="First Name"
+                                                            class="first_name form-control rounded-pill border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="fw-bold text-warning mb-2" for="partner_last_name">Last
+                                                            Name</label>
+                                                        <input name="partner_last_name" required id="partner_last_name"
+                                                            data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter Last Name"
+                                                            data-parsley-pattern-message="First Name Must Be Alphabetic"
+                                                            data-parsley-pattern="/^[a-zA-Z ]*$/"
+                                                            data-parsley-group="block-2" type="text"
+                                                            placeholder="Last Name"
+                                                            class="last_name form-control rounded-pill border-0">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3 col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="fw-bold text-warning mb-2" for="partner_dob">Date Of
+                                                            Birth</label>
+                                                        <input name="partner_dob" required id="partner_dob" data-parsley-required="true"
+                                                            data-parsley-required-message="Please Enter Date of Birth"
+                                                            data-parsley-pattern-message="" data-parsley-group="block-2"
+                                                            type="date" placeholder="Date of Birth"
+                                                            class="first_name form-control rounded-pill border-0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
+                                                <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                                                    Next<span class="fa fa-arrow-right ms-2"></span>
+                                                </div>
+                                                <div
+                                                    class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                                                    <span class="fa fa-arrow-left me-2"></span>Prev
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card2 ms-2 pb-2">
+                                            <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
+                                                <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim Your TAX
+                                                    Rebate Now</h4>
+                                                <h5 class="fw-bold text-center text-warning mb-4 w-100"> Claims can be
+                                                    paid out within 72 hours</h5>
+                                                <div class="mb-3 col-md-12">
+                                                    <label class="fw-bold text-warning mb-2">Are you married or in a
+                                                        civil partnership for the last 1 to 4 years?</label>
+                                                    <select name="question1"
+                                                        class="select-field  form-control border-0 rounded-pill"
+                                                        id="question1">
+                                                        <option selected="selected" value="" disabled="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-md-12">
+                                                    <label class="fw-bold text-warning mb-2">Are you a higher rate
+                                                        tax-payer?</label>
+                                                    <select name="question2"
+                                                        class="select-field  form-control border-0 rounded-pill"
+                                                        id="question2">
+                                                        <option selected="selected" value="" disabled="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-md-12">
+                                                    <label class="fw-bold text-warning mb-2">Are you or your partner
+                                                        unemployed or earning up to £12,500 per year?</label>
+                                                    <select name="question3"
+                                                        class="select-field  form-control border-0 rounded-pill"
+                                                        id="question3">
+                                                        <option selected="selected" value="" disabled="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-md-12">
+                                                    <label class="fw-bold text-warning mb-2">Are you or your partner
+                                                        earning between £12,500 and £50,000 per year?</label>
+                                                    <select name="question4"
+                                                        class="select-field  form-control border-0 rounded-pill"
+                                                        id="question4">
+                                                        <option selected="selected" value="" disabled="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-md-12">
+                                                    <label class="fw-bold text-warning mb-2">Are you in arrears with
+                                                        HMRC?</label>
+                                                    <select name="question5"
+                                                        class="select-field  form-control border-0 rounded-pill"
+                                                        id="question5">
+                                                        <option selected="selected" value="" disabled="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-md-12">
+                                                    <label class="fw-bold text-warning mb-2"> Have you claimed marriage
+                                                        tax allowance before?</label>
+                                                    <select name="question6"
+                                                        class="select-field  form-control border-0 rounded-pill"
+                                                        id="question6">
+                                                        <option selected="selected" value="" disabled="">Select</option>
+                                                        <option value="Yes">Yes</option>
+                                                        <option value="No">No</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="row px-md-3 mt-1 mb-1 mx-0 w-100 justify-content-between flex-row-reverse py-3">
+                                                <div class="continueBtn mt-1 px-3 rounded-pill ms-auto">
+                                                    Next<span class="fa fa-arrow-right ms-2"></span>
+                                                </div>
+                                                <div
+                                                    class="prev mt-1 px-3 rounded-pill h-auto w-auto d-flex align-items-center border-0">
+                                                    <span class="fa fa-arrow-left me-2"></span>Prev
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card2 ms-2 pb-2">
                                             <div class="row px-md-3 mt-3 mx-0 w-100 justify-content-center">
                                                 <h4 class="fw-bold text-center text-warning mb-0 w-100">Claim

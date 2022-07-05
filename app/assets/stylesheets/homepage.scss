@@ -223,6 +223,13 @@ $primary-color: #111147;
       font-size: 14px;
       padding-top: 2px;
     }
+    #progressbr li:nth-child(9).active:before  {
+      background: $yellow-color;
+      font-family: FontAwesome;
+      content: "\f53d";
+      font-size: 14px;
+      padding-top: 2px;
+    }
   }
 }
 label.error{

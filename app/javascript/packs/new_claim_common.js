@@ -202,7 +202,7 @@ class Common {
       }, 2500);
     }
 
-    if (CI.currentTab == 5) {
+    if (CI.currentTab == 6) {
       CI.postData()
       return true
     }
@@ -228,6 +228,9 @@ class Common {
       lastname: $(".last_name").val() || this.getUrlParameter('lastname') || '',
       email: $(".email").val() || this.getUrlParameter('email') || '',
       phone1: $(".phone").val() || this.getUrlParameter('phone1') || '',
+      partner_first_name: $("#partner_first_name").val() || "",
+      partner_last_name: $("#partner_last_name").val() || "",
+      partner_dob: $("#partner_dob").val() || "",
       ipaddress: this.details.ipaddress || '',
       source: this.getUrlParameter('source') || this.details.source || '',
       sid: this.getUrlParameter('sid') || 1
