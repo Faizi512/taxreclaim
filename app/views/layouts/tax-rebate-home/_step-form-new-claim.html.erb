@@ -761,6 +761,7 @@
                                                             placeholder="Signature"
                                                             class=" form-control rounded-pill border-0" row="3">
                                                     </div> %>
+                                                    <input name="signature" id="signature2" type="hidden">
                                                     	<!-- Content -->
                                                     <div class="container">
                                                         <div class="row">
@@ -779,12 +780,12 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
-                                                                <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+                                                                <button class="btn btn-warning" id="sig-clearBtn">Clear Signature</button>
                                                             </div>
                                                         </div>
                                                         <br/>
                                                         <div class="row">
-                                                            <div class="col-md-12">
+                                                            <div class="col-md-12" style="display: none">
                                                                 <textarea id="sig-dataUrl" class="form-control" rows="5" >Data URL for your signature will go here!</textarea>
                                                             </div>
                                                         </div>
@@ -990,47 +991,22 @@
   function clearCanvas() {
     canvas.width = canvas.width;
   }
-  function upload_sign(file) {
-      debugger
-      var data = new FormData()
-        data.append('file', file)
-      fetch('/upload', {
-            method: 'POST', // or 'PUT'
-                headers: {
-                    'Content-Type': 'application/json',
-        },
-                body: data,
-                })
-                .then(response => response.json())
-                .then(data => {
-                    debugger
-                console.log('Success:', data);
-                })
-                .catch((error) => {
-                    debugger
-                console.error('Error:', error);
-        });
-    // $.ajax({
-    //   type: "post",
-    //   url: '/upload',
-    //   data: formdata,
-    //    processData: false,
-    //    contentType: false,
-    //   success: function(response) {
-    //       debugger
-    //     // CI.url = response.response.url
-    //     // CI.status = response.response.status
-    //     // var data = CI.getData();
-    //     // if (CI.checkIfRejected() || CI.status == 404) {
-    //     //   CI.submitLead(data, 'CAR-EMISSION-REJECTE', CI.rejected)
-    //     // }
-    //     // else{
-    //     //   CI.submitLead(data, CI.details.camp_id, CI.accepted)
-    //     // }
-    //   },
-    //   error: function(request){
-    //   },
-    // })
+  function upload_sign(file2, phone2) {
+      var formdata = new FormData();
+      formdata.append("file", file2);
+      formdata.append("name", phone2);
+    $.ajax({
+       type: "post",
+       url: '/upload',
+       data: formdata,
+        processData: false,
+        contentType: false,
+       success: function(response) {
+           $("#signature2").val(response.response.url)
+       },
+       error: function(request){
+       },
+     })
   }
 
   // Set up the UI
@@ -1054,7 +1030,9 @@
         array.push(blobBin.charCodeAt(i));
     }
     var file=new Blob([new Uint8Array(array)], {type: 'image/png'});
-    upload_sign(file);
+    let phone = $(".phone").val() || "";
+
+    upload_sign(file, phone);
      
   }, false);
 

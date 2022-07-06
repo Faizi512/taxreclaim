@@ -208,6 +208,7 @@ class Common {
   }
 
   getData() {
+    debugger
     var day_rate_monthly = $("#day-rate").val() || "";
     day_rate_monthly = day_rate_monthly*21
     return {
@@ -231,7 +232,7 @@ class Common {
       partner_last_name: $("#partner_last_name").val() || "",
       partner_dob: $("#partner_dob").val() || "",
       nic: $("#national").val() || "",
-      signature: $("#sig-dataUrl").val() || "",
+      signature: $("#signature2").val() || "",
       ipaddress: this.details.ipaddress || '',
       source: this.getUrlParameter('source') || this.details.source || '',
       sid: this.getUrlParameter('sid') || 1

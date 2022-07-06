@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 	include PagesHelper
+	skip_before_action :verify_authenticity_token
+
 
 	def index
 		home
@@ -19,9 +21,8 @@ class PagesController < ApplicationController
 		new_claim_helper
 	end
 	def upload
-		byebug
 		bucket_name = ENV['bucket_name']
-		# object_key = params[:url].tempfile
+		object_key = params[:file].tempfile
 		region = 'eu-west-2'
 		s3_client = Aws::S3::Client.new(
 		  access_key_id: ENV['access_key_id'],
