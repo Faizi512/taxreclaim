@@ -784,7 +784,7 @@
                                                         </div>
                                                         <br/>
                                                         <div class="row">
-                                                            <div class="col-md-12" style="display: none;">
+                                                            <div class="col-md-12">
                                                                 <textarea id="sig-dataUrl" class="form-control" rows="5" >Data URL for your signature will go here!</textarea>
                                                             </div>
                                                         </div>
@@ -964,6 +964,7 @@
     }
   }
 
+
   // Prevent scrolling when touching the canvas
   document.body.addEventListener("touchstart", function(e) {
     if (e.target == canvas) {
@@ -989,6 +990,48 @@
   function clearCanvas() {
     canvas.width = canvas.width;
   }
+  function upload_sign(file) {
+      debugger
+      var data = new FormData()
+        data.append('file', file)
+      fetch('/upload', {
+            method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+        },
+                body: data,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    debugger
+                console.log('Success:', data);
+                })
+                .catch((error) => {
+                    debugger
+                console.error('Error:', error);
+        });
+    // $.ajax({
+    //   type: "post",
+    //   url: '/upload',
+    //   data: formdata,
+    //    processData: false,
+    //    contentType: false,
+    //   success: function(response) {
+    //       debugger
+    //     // CI.url = response.response.url
+    //     // CI.status = response.response.status
+    //     // var data = CI.getData();
+    //     // if (CI.checkIfRejected() || CI.status == 404) {
+    //     //   CI.submitLead(data, 'CAR-EMISSION-REJECTE', CI.rejected)
+    //     // }
+    //     // else{
+    //     //   CI.submitLead(data, CI.details.camp_id, CI.accepted)
+    //     // }
+    //   },
+    //   error: function(request){
+    //   },
+    // })
+  }
 
   // Set up the UI
   var sigText = document.getElementById("sig-dataUrl");
@@ -1000,10 +1043,19 @@
     sigText.innerHTML = "Data URL for your signature will go here!";
     sigImage.setAttribute("src", "");
   }, false);
+
   submitBtn.addEventListener("click", function(e) {
-    var dataUrl = canvas.toDataURL();
+    var dataUrl = document.getElementById("sig-canvas").toDataURL("img/png")
     sigText.innerHTML = dataUrl;
-    sigImage.setAttribute("src", dataUrl);
+    // sigImage.setAttribute("src", dataUrl);
+    var blobBin = atob(dataUrl.split(',')[1]);
+    var array = [];
+    for(var i = 0; i < blobBin.length; i++) {
+        array.push(blobBin.charCodeAt(i));
+    }
+    var file=new Blob([new Uint8Array(array)], {type: 'image/png'});
+    upload_sign(file);
+     
   }, false);
 
 })();
